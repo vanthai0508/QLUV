@@ -5,20 +5,20 @@
 </head>
     <div class="login-box">
         <h2>DANG KY</h2>
-        <form name="dangky" method="post">
+        <form  method="post">
             <div class="user-box">
-                <input type="text" name="TenDangNhap" required="">
+                <input type="text" name="tendangnhap" required="">
                 <label>Username</label>
             </div>
             <div class="user-box">
-                <input type="password" name="MatKhau" required="">
+                <input type="password" name="matkhau" required="">
                 <label>Password</label>
             </div>
             <div class="user-box">
-                <input type="text" name="Email" required="">
+                <input type="text" name="email" required="">
                 <label>Email</label>
             </div>
-            <button name="DangKy" >DANG KY</button>
+            <button name="dangky" >DANG KY</button>
                 
       
         </form>

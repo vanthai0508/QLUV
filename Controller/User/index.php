@@ -9,10 +9,10 @@
     switch($Action)
     {
         case 'dangnhap':
-            if(isset($_POST['DangNhap']))
+            if(isset($_POST['dangnhap']))
             {
-                $TenDangNhap=trim($_POST['TenDangNhap']);
-                $MatKhau=trim($_POST['MatKhau']);
+                $TenDangNhap=trim($_POST['tendangnhap']);
+                $MatKhau=trim($_POST['matkhau']);
                 if($dbuser->ktrauserpass($TenDangNhap,$MatKhau)==1)
                 {
                     echo '<script language="javascript">alert("Thanh cong !!!"); window.location="index.php?Controller=user&Action=profile";</script>';
@@ -21,12 +21,12 @@
             require_once('View/Dangnhap.php');
             break;
         case 'add':
-            if(isset($_POST['DangKy']))
+            if(isset($_POST['dangky']))
             {
                 
-                $TenDangNhap=trim($_POST['TenDangNhap']);
-                $MatKhau=trim($_POST['MatKhau']);
-                $Email=trim($_POST['Email']);
+                $TenDangNhap=trim($_POST['tendangnhap']);
+                $MatKhau=trim($_POST['matkhau']);
+                $Email=trim($_POST['email']);
             //   $dbuser->add($TenDangNhap,$MatKhau,$Email);
                 if($dbuser->add($TenDangNhap,$MatKhau,$Email))
                 {

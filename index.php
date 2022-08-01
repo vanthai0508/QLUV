@@ -20,6 +20,12 @@ use ModelUser as GlobalModelUser;
             $dbuser->connect();
             require_once('Controller/User/index.php');
             break;
+        case 'cv':
+            include ('Model/M_User.php');
+            $dbuser=new ModelUser;
+            $dbuser->connect();
+            require_once('Controller/CV/index.php');
+            break;
         default:
             require_once('Controller/User/index.php');
             break;
