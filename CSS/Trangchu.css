@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: url(dola.jpg);
+  font-size: 16px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+section {
+  text-align: center;
+  padding: 10px;
+  margin: 20px;
+}
+button {
+  background: #27dcc4;
+  color: #fff;
+  padding: 15px 30px;
+  margin: 10px 0;
+  font-size: 0.9em;
+  cursor: pointer;
+  border: none;
+}
+button:hover {
+  background-color: #acacac;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style-type: none;
+  padding: 5px 0;
+}
+p {
+  font-size: 3em;
+  color: #27dcc4;
+  text-align: center;
+}
+
+.article {
+  border: 5px solid #424242;
+  display: inline-block;
+  margin: 80px 20px 0 20px;
+  background-color: #262626;
+  color: #a1a1a1;
+}
+.article h1 {
+  font-size: 1.5em;
+  text-align: center;
+  color: #fff;
+}
+
+.column {
+  width: 33.33%;
+  float: left;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
