@@ -1,7 +1,7 @@
 
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="CSS/Dangnhap.css">
+<link rel="stylesheet" type="text/css" href="Css/Dangnhap.css">
 </head>
     <div class="login-box">
         <h2>DANG NHAP</h2>

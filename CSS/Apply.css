@@ -18,7 +18,7 @@ body {
     border: 1px solid #80808000;
     grid-column: 6/9;
     grid-row: 3;
-    height: 620px;
+    height: 600px;
     width: 392px;
     display: flex;
     flex-direction: column;
