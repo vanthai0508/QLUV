@@ -44,7 +44,7 @@
 
                 if($dbcv->addcv($HoTen,$ViTri,$Ngayapply,$SoDienThoai,$File,$IdUser))
                 {
-                    echo '<script language="javascript">alert("Da apply thanh cong !!!"); window.location="index.php?Controller=user&Action=profile";</script>';
+                    echo '<script language="javascript">alert("Da apply thanh cong !!!"); window.location="index.php?Controller=user&Action=trangchu";</script>';
                 }
             }
             require_once 'View/Apply.php';
@@ -107,7 +107,7 @@
                 $NgayPV = date ( 'y-m-d h:i:s' , $NgayPV);
                 if($dbxn->addxn($cv->Id_User,$NgayPV,$IdCV,0))
                 {
-                    echo '<script language="javascript">alert("Da approve thanh cong !!!"); window.location="index.php?Controller=user&Action=profile";</script>'; 
+                    echo '<script language="javascript">alert("Da approve thanh cong !!!"); window.location="index.php?Controller=user&Action=trangchu";</script>'; 
                 
                 }
 

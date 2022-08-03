@@ -49,9 +49,10 @@
                     $NgayPV=$data['Ngaypv'];
                     $Id_CV=$data['Id_CV'];
                     $TinhTrang=$data['Tinhtrang'];
+                    $Id_XN=$data['Id_XN'];
               
                 
-                    $xns[$i]=new EntityXN($Id_User,$NgayPV,$Id_CV,$TinhTrang);
+                    $xns[$i]=new EntityXN($Id_User,$NgayPV,$Id_CV,$TinhTrang,$Id_XN);
                     $i++;
                 }
             
@@ -75,6 +76,12 @@
             return $xn;
         }
 
+        public function xacNhan($id)
+        {
+            $sql="UPDATE xacnhan SET Tinhtrang=1 WHERE Id_XN=$id";
+            return $this->execute($sql);
+        }
+
         public function listUserThamGiaPV()
         {
             $sql = "SELECT * from xacnhan WHERE Tinhtrang=1  ";
@@ -87,7 +94,9 @@
                 $NgayPV =  $row['Ngaypv'];
                 $Id_CV = $row['Id_CV'];
                 $TinhTrang =  $row['Tinhtrang'];
-                $xns[$i] = new EntityXN($Id_User, $NgayPV,$Id_CV,$TinhTrang );
+                $Id_XN=$row['Id_XN'];
+
+                $xns[$i] = new EntityXN($Id_User, $NgayPV,$Id_CV,$TinhTrang,$Id_XN);
                 $i++;
         }
         return $xns;

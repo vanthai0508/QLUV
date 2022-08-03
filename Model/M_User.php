@@ -107,9 +107,10 @@
                     $Ten=$data['Tendangnhap'];
                     $MatKhau=$data['Matkhau'];
                     $Email=$data['Email'];
+                    $Role=$data['Role'];
               
                 
-                    $users[$i]=new EntityUser($Id_User,$Ten,$MatKhau,$Email);
+                    $users[$i]=new EntityUser($Id_User,$Ten,$MatKhau,$Email,$Role);
                     $i++;
                 }
             

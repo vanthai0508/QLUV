@@ -14,6 +14,10 @@
             <div class="form">
                 
                 <h2>XÁC NHẬN THAM GIA</h2>
+                <?php if(empty($XN)!=null) echo "CV của bạn chưa được duyệt";
+                else {
+
+                 ?>
                 
                 <i class="fab fa-app-store-ios"></i>
                 <label style="margin-left: -150px;">Họ và tên</label>
@@ -23,6 +27,7 @@
                 <label style="margin-left: -110px;">Ngày phỏng vấn</label>
                 <input type="text" name="ngaypv" value="<?php echo $XN->NgayPV; ?>" readonly="False"> 
                 <input id="submit" type="submit" name="xacnhan" value="Xác nhận">
+                <?php } ?>
                 
             </div>  
                       

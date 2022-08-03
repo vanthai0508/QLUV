@@ -1,8 +1,37 @@
 * {
   box-sizing: border-box;
 }
+.start h1 {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 40px;
+}
+.link {
+  text-align: right;
+}
+.button {
+  background-color: white;
+  color: black;
+  border: 2px solid #73AD21;
+  border-radius:5px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Lucida Sans Unicode";
+}
+.button:hover {
+  background-color: #73AD21;
+  color:white;
+}
+.button:active{
+  background-color: green;
+  border-color: green;
+}
 body {
   background: url(dola.jpg);
+  background-color: #424242;
   font-size: 16px;
   background-size: cover;
   background-repeat: no-repeat;

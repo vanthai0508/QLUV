@@ -18,7 +18,7 @@
         </thead>
         <tbody>
             <?php
-            print_r($xns);
+            
             for($i=1;$i<=sizeof($xns);$i++){ ?>
             <tr>
                 <td><?php echo $i; ?></td>

@@ -65,10 +65,10 @@
             {
                 if($cvs[$i]->Id_CV==$id)
                 {
-                    $cv=$cvs[$i];
+                    return $cvs[$i];
                 }
             }
-            return $cv;
+            // return $cv;
 
         }
     }

@@ -10,10 +10,37 @@
 <body>
     <div class="start">
         <h1>MOR SOFTWARE JSC</h1>
+        <div class="link">
+            <a href="index.php?Controller=user&Action=dangnhap" class="button">Đăng nhập</a>
+            <a href="index.php?Controller=user&Action=add" class="button">Đăng ký</a>
+            
+            
+
+            <?php
+                if(isset($_SESSION['id_user']))
+                {
+                    if($_SESSION['role']==1)
+                    { ?>
+                        <a href="index.php?Controller=cv&Action=apply" class="button">APPLY</a>
+                        <a href="index.php?Controller=user&Action=xacnhan" class="button">Xác nhận</a>
+                        <?php
+                    }
+                    else 
+                    { ?>
+                        <a href="index.php?Controller=cv&Action=list" class="button">Quản lý</a>
+                        <a href="index.php?Controller=user&Action=listuserthamgiapv" class="button">UV Tham gia</a>
+
+                        <?php
+                    }
+                } 
+                else echo "Vui long dang nhap" ?>
+        </div>
     </div>
     <div class="column">
         <div class="article">
             <h1>Reduced development costs</h1>
+
+           
             <section>
                 By having Moa's SE stationed at your company, you can ensure quality and keep costs down to about half
                 of the cost in Japan.
