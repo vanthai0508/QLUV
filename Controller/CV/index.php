@@ -1,24 +1,16 @@
 <?php 
 
-    use PHPMailer\PHPMailer\PHPMailer;
-   
-    use PHPMailer\PHPMailer\Exception;
-    
-    require 'PHPMailer-master/src/Exception.php';
-     require 'PHPMailer-master/src/PHPMailer.php';
-     require 'PHPMailer-master/src/SMTP.php';
-     require 'PHPMailer-master/src/POP3.php';
-     require 'PHPMailer-master/src/OAuthTokenProvider.php';
-   //  require 'phpmailer/PHPMailerAutoload.php';
-//     require 'PHPMailerAutoload.php';
-//     include APPPATH . "../storage/PHPMailer-master/src/PHPMailer.php";
-// include APPPATH . "../storage/PHPMailer-master/src/Exception.php";
-// include APPPATH . "../storage/PHPMailer-master/src/OAuth.php";
-// include APPPATH . "../storage/PHPMailer-master/src/POP3.php";
-// include APPPATH . "../storage/PHPMailer-master/src/SMTP.php";
+    include "PHPMailer/src/PHPMailer.php";
+    include "PHPMailer/src/Exception.php";
+    // include "PHPMailer/src/OAuth.php";
+    include "PHPMailer/src/OAuthTokenProvider.php";
+    include "PHPMailer/src/POP3.php";
+    include "PHPMailer/src/SMTP.php";
+
+
  
-// use PHPMailer\PHPMailer\PHPMailer;
-// use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
 
 
 
@@ -61,38 +53,46 @@
                 // $user=array();
                 // $user=$dbuser->userTheoId($IdUser);
            //     require 'PHPMailerAutoload.php';
-           $message = " This is testing message from my server";
-            
-           $mail = new PHPMailer(); // create a new object
-           $mail->IsSMTP(); // enable SMTP
-           $mail->Host = "smtp.gmail.com";
-           $mail->SMTPDebug = 2; // debugging: 1 = errors and messages, 2 = messages only
-           $mail->SMTPAuth = true; // authentication enabled
-           $mail->SMTPSecure = 'ssl'; // secure transfer enabled REQUIRED for GMail
-           $mail->Port = 25; // or 587
-           $mail->IsHTML(true);
-           $mail->SMTPOptions = array(
-            'ssl' => array(
-            'verify_peer' => false,
-            'verify_peer_name' => false,
-            'allow_self_signed' => true
-            )
-            );
-           $mail->Username = "vanthai22756@gmail.com"; // My gmail username
-           $mail->Password = "2silverbullet"; // My Gmail Password
-           $mail->SetFrom("tranthai22756@gmail.com");
-           $mail->Subject = "Test Mail from my Server";
-           $mail->Body = $message;
-           $mail->AddAddress("tranthai22756@gmail.com");
-            if($mail->Send())
-               {
-             print json_encode("SUCCESS");
-         }
-         else
-         {
-             echo "Mailer Error: " . $mail->ErrorInfo;
-         
-         }
+                $mail=new PHPMailer(true);
+                print_r($mail);
+                try 
+                {
+        //Server settings
+                    $mail->SMTPDebug = 0;                                 // Enable verbose debug output
+                    $mail->isSMTP();                                      // Set mailer to use SMTP
+                    $mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+                    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                    $mail->Username = 'vanthai22756@gmail.com';                 // SMTP username
+                    $mail->Password = 'ogkfhlptrhjjdikg';                           // SMTP password
+                    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+                    $mail->Port = 587;                                    // TCP port to connect to
+     
+                    //Recipients
+                    $mail->setFrom('vanthai22756@gmail.com', 'Mailer');
+                    $mail->addAddress('tranthai22756@gmail.com', 'thai');     // Add a recipient
+                    //  $mail->addAddress('ellen@example.com');               // Name is optional
+                    // $mail->addReplyTo('info@example.com', 'Information');
+                    // $mail->addCC('cc@example.com');
+                    // $mail->addBCC('bcc@example.com');
+                
+                    //Attachments
+                    // $mail->addAttachment('/var/tmp/file.tar.gz');         // Add attachments
+                    // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+                
+                    //Content
+                    $mail->isHTML(true);                                  // Set email format to HTML
+                    $mail->Subject = 'Thư phản hổi từ MOR';
+                    $mail->Body    = 'Rất tiếc , bạn không đủ điều kiện của chúng tôi , hẹn gặp bạn hợp tác ở lần sau';
+                    // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+                
+                    $mail->send();
+                    echo 'Message has been sent';
+                }
+                catch (Exception $e) 
+                {
+                    echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+                }
+                //ogkfhlptrhjjdikg;
 
             }
             break;
