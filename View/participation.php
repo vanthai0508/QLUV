@@ -10,7 +10,7 @@
                 <th>STT</th>
                 <th>Họ và tên</th>
                 <th>Vị trí</th>
-                <th>Ngày apply</th>
+                <th>Ngày phỏng vấn </th>
                 <th>Phone</th>
                 <th>Link CV</th>
                 <th>Email</th>
@@ -25,7 +25,7 @@
                 <td><?php echo $i; ?></td>
                 <td><?php echo $cv[$i]->HoTen; ?></td>
                 <td><?php echo $cv[$i]->ViTri; ?></td>
-                <td><?php echo $cv[$i]->NgayApply; ?></td>
+                <td><?php echo $xns[$i]->NgayPV; ?></td>
                 <td><?php echo $cv[$i]->Phone; ?></td>
                 <td><img src="Model\uploads\<?php echo $cv[$i]->File; ?>"></td>
                 <td><?php echo $user[$i]->Email; ?></td>
