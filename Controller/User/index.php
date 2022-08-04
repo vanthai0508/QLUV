@@ -59,17 +59,19 @@
             $IdUser=$_SESSION['id_user'];
             $XN=array();
             $XN=$dbxn->xacNhanChoUser($IdUser);
+            
             if(empty($XN)==null)
             {
                 $CV=array();
+                //$CV=$dbcv->cvTheoID($XN->Id_CV);
                 $CV=$dbcv->cvTheoID($XN->Id_CV);
-
+    
                 if(isset($_POST['xacnhan']))
                 {   
-                    $homnay=date('Y-m-d H:i:s');
+                    $HomNay=date('Y-m-d H:i:s');
                     $NgayPV=$XN->NgayPV;
                     $NgayXN=date('Y-m-d H:i:s',strtotime('-6 hour',strtotime($NgayPV)));
-                    if(strtotime($homnay)<=strtotime($NgayXN))
+                    if(strtotime($HomNay)<=strtotime($NgayXN))
                     {
                         if($dbxn->xacnhan($XN->Id_XN))
                         {

@@ -14,7 +14,9 @@
             <div class="form">
                 
                 <h2>XÁC NHẬN THAM GIA</h2>
-                <?php if(empty($XN)!=null) echo "CV của bạn chưa được duyệt";
+                
+                <?php 
+                if(empty($XN)!=null) echo "CV của bạn chưa được duyệt";
                 else {
 
                  ?>
