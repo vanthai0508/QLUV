@@ -24,23 +24,97 @@
 
     switch ($Action)
     {
+   
         case 'apply':
             if(isset($_POST['submitcv']))
             {
-                $HoTen=trim($_POST['hoten']);
-                $ViTri=trim($_POST['vitri']);
-                $SoDienThoai=trim($_POST['sdt']);
-                $File=trim($_POST['file']);
+                $File=$dbcv->upAnh();
+
+                $HoTen=trim($_POST['username']);
+                $ViTri=trim($_POST['location']);
+                $SoDienThoai=trim($_POST['phone']);
+              //  $File=trim($_POST['file']);
                 $Ngayapply=date("y-m-d h:i:s");
                 $IdUser=$_SESSION['id_user'];
-
                 if($dbcv->addcv($HoTen,$ViTri,$Ngayapply,$SoDienThoai,$File,$IdUser))
                 {
                     echo '<script language="javascript">alert("Da apply thanh cong !!!"); window.location="index.php?Controller=user&Action=trangchu";</script>';
                 }
+
+
             }
-            require_once 'View/Apply.php';
-            break;
+
+
+                
+
+
+
+
+                        require_once 'View/Apply.php';
+    
+                        break;
+            
+
+            // if(isset($_POST['submitcv']))
+            // {
+            
+           //     echo $_FILES["file"]["tmp_name"];
+                
+
+
+            //     $target_dir = "uploads/";
+            //     $target_file = $target_dir . basename($_FILES["file"]["name"]);
+            //     $uploadOk = 1;
+            //     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+            //     // Check if image file is a actual image or fake image
+            // //    if(isset($_POST["submit"])) {
+            //     $check = getimagesize($_FILES["file"]["tmp_name"]);
+            //     if($check !== false) {
+            //         echo "File is an image - " . $check["mime"] . ".";
+            //         $uploadOk = 1;
+            //     } else {
+            //         echo "File is not an image.";
+            //         $uploadOk = 0;
+            //     }
+            //   //  }
+
+            //     // Check if file already exists
+            //     if (file_exists($target_file)) {
+            //     echo "Sorry, file already exists.";
+            //     $uploadOk = 0;
+            //     }
+
+            //     // Check file size
+            //     if ($_FILES["file"]["size"] > 500000) {
+            //     echo "Sorry, your file is too large.";
+            //     $uploadOk = 0;
+            //     }
+
+            //     // Allow certain file formats
+            //     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+            //     && $imageFileType != "gif" ) {
+            //     echo "Sorry, only JPG, jpeg, PNG & GIF files are allowed.";
+            //     $uploadOk = 0;
+            //     }
+
+            //     // Check if $uploadOk is set to 0 by an error
+            //     if ($uploadOk == 0) {
+            //     echo "Sorry, your file was not uploaded.";
+            //     // if everything is ok, try to upload file
+            //     } else {
+            //     if (move_uploaded_file($_FILES["file"]["tmp_name"], $target_file)) {
+            //      //   echo "The file ". htmlspecialchars( basename( $_FILES["file"]["name"])). " has been uploaded.";
+            //         $File=htmlspecialchars( basename( $_FILES["file"]["name"]));
+            //     } else {
+            //         echo "Sorry, there was an error uploading your file.";
+            //     }
+            //             }
+
+            
+            // }
+            // require_once 'View/Apply.php';
+            // break;
         case 'list':
             $cvs=array();
             $cvs=$dbcv->listCV();
@@ -80,7 +154,7 @@
                 $NgayPV=strtotime ( '+2 day' , strtotime ( $date) ) ;
                 $USER=$dbuser->userTheoId($cv->Id_User);
                 $NgayPV = date ( 'y-m-d h:i:s' , $NgayPV);
-                $NoiDung = "Chucs mừng bạn đã thành công ưnngs tuyển vào công ty chúng tôi , thời gian phỏng vấn của bạn là ngày ".$NgayPV." . Vui lòng xác đăng nhập vào hệ thống và xác nhận trước 6 giờ so với thời điểm phỏng vấn . Thanks ";
+                $NoiDung = "Chúc mừng bạn đã thành công ứng tuyển vào công ty chúng tôi , thời gian phỏng vấn của bạn là ngày ".$NgayPV." . Vui lòng xác đăng nhập vào hệ thống và xác nhận trước 6 giờ so với thời điểm phỏng vấn . Thanks ";
 
                 if($dbxn->addxn($cv->Id_User,$NgayPV,$IdCV,0))
                 {

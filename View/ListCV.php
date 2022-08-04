@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="Css/Listcv.css">
+    <link rel="stylesheet" type="text/css" href="Css/ListCV.css">
 </head>
 <h2>DANH SÁCH CÁC CV</h2>
 <div class="table-wrapper">
@@ -27,12 +27,12 @@
                 <td><?php echo $cvs[$i]->ViTri; ?></td>
                 <td><?php echo $cvs[$i]->NgayApply; ?></td>
                 <td><?php echo $cvs[$i]->Phone; ?></td>
-                <td><a href="<?php echo $cvs[$i]->File;?>" >CV</a></td>
+                <td><img src="Model\uploads\<?php echo $cvs[$i]->File; ?>"></td>
                 <td><?php echo $cvs[$i]->Id_User; ?></td>
                 <!-- <td><?php echo $cvs[$i]->Id_CV; ?></td> -->
                 <td>
-                    <a href="index.php?Controller=cv&Action=reject&idcv=<?php echo $cvs[$i]->Id_CV;?>">Reject</a>
-                    <a href="index.php?Controller=cv&Action=approve&idcv=<?php echo $cvs[$i]->Id_CV;?>">Approve</a>
+                    <a href="index.php?Controller=cv&Action=reject&idcv=<?php echo $cvs[$i]->Id_CV;?>" class="button">Reject</a>
+                    <a href="index.php?Controller=cv&Action=approve&idcv=<?php echo $cvs[$i]->Id_CV;?>" class="button">Approve</a>
                 </td>
 
             </tr>

@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
     </head>
     <body>
-    <form name="apply" method="POST" enctype="multipart/form-data">
+    <form name="pass" method="POST">
         <div class="to">
         
             <div class="form">
@@ -16,15 +16,11 @@
                 <h2>APPLY</h2>
                 
                 <i class="fab fa-app-store-ios"></i>
-                <label style="margin-left: -150px;">Họ và tên</label>
+                <label style="margin-left: 10px;">Vui lòng nhập tên đăng nhập của bạn : </label>
                 <input type="text" name="username">
-                <label style="margin-left: -190px;">Vị trí</label>
-                <input type="text" name="location">
-                <label>Số điện thoại</label>
-                <input type="text" name="phone">    
-                <label style="margin-left: -190px;">File</label>
-                <input type="file" name="file" id="file" > 
-                <input id="submit" type="submit" name="submitcv" value="Send">
+                <label style="margin-left: -50px;">Vui lòng nhập email của bạn : </label>
+                <input type="text" name="email">
+                <input type="submit" name="submitpass">
                 
             </div>  
                       

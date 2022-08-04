@@ -83,7 +83,7 @@
         {
             $users=array();
             $users=$this->listUser();
-            for($i=1;$i<=sizeof($users);$i++)
+            for($i = 1;$i <= sizeof($users);$i ++ )
             {
                 if($users[$i]->TenDangNhap==$Ten)
                 {
@@ -91,11 +91,12 @@
                 }
             }
         }
+      
         public function userTheoId($id)
         {
             $users=array();
             $users=$this->listUser();
-            for($i=1;$i<=sizeof($users);$i++)
+            for($i = 1;$i <= sizeof($users);$i ++ )
             {
                 if($users[$i]->Id_User==$id)
                 {
@@ -127,6 +128,35 @@
             
         
             return $users;
+        }
+        public function checkUsername($Username)
+        {
+            $sql="SELECT * FROM user WHERE Tendangnhap='$Username'";
+            $this->execute($sql);
+            if($this->num_rows()==0)
+            {
+                $Ktra=0;
+            }
+            else{
+                $Ktra=1;
+            }
+            return $Ktra;
+
+        }
+
+        public function checkEmail($email)
+        {
+            $sql="SELECT * FROM user WHERE Email='$email'";
+            $this->execute($sql);
+            if($this->num_rows()==0)
+            {
+                $Ktra=0;
+            }
+            else{
+                $Ktra=1;
+            }
+            return $Ktra;
+
         }
         public function num_rows()
         {
@@ -170,7 +200,7 @@
             
                 //Content
                 $mail->isHTML(true);                                  // Set email format to HTML
-                $mail->Subject = 'Thư phản hổi từ MOR';
+                $mail->Subject = 'Thu phan hoi tu MOR';
                 $mail->Body    = $Noidung;
                 // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
             

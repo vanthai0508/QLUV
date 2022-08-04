@@ -23,12 +23,12 @@
                 
                 <i class="fab fa-app-store-ios"></i>
                 <label style="margin-left: -150px;">Họ và tên</label>
-                <input type="text" name="hoten" value="<?php echo $CV->HoTen; ?>" readonly="False">
+                <input type="text" name="username" value="<?php echo $CV->HoTen; ?>" readonly="False">
                 <label style="margin-left: -190px;">Vị trí</label>
-                <input type="text" name="vitri" value="<?php echo $CV->ViTri; ?>" readonly="False"> 
+                <input type="text" name="location" value="<?php echo $CV->ViTri; ?>" readonly="False"> 
                 <label style="margin-left: -110px;">Ngày phỏng vấn</label>
-                <input type="text" name="ngaypv" value="<?php echo $XN->NgayPV; ?>" readonly="False"> 
-                <input id="submit" type="submit" name="xacnhan" value="Xác nhận">
+                <input type="text" name="date" value="<?php echo $XN->NgayPV; ?>" readonly="False"> 
+                <input id="submit" type="submit" name="confirm" value="Xác nhận">
                 <?php } ?>
                 
             </div>  

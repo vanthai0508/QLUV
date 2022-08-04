@@ -18,15 +18,16 @@
         </thead>
         <tbody>
             <?php
-            
-            for($i=1;$i<=sizeof($xns);$i++){ ?>
+           
+            for($i=1;$i<=sizeof($xns);$i++){ 
+               ?>
             <tr>
                 <td><?php echo $i; ?></td>
                 <td><?php echo $cv[$i]->HoTen; ?></td>
                 <td><?php echo $cv[$i]->ViTri; ?></td>
                 <td><?php echo $cv[$i]->NgayApply; ?></td>
                 <td><?php echo $cv[$i]->Phone; ?></td>
-                <td><a href="<?php echo $cv[$i]->File;?>" >CV</a></td>
+                <td><img src="Model\uploads\<?php echo $cv[$i]->File; ?>"></td>
                 <td><?php echo $user[$i]->Email; ?></td>
             
                 

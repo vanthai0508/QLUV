@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="CSS/Trangchu.css">
+    <link rel="stylesheet" href="CSS/home.css">
     <title>Document</title>
 </head>
 

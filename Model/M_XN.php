@@ -42,7 +42,7 @@
           
             $xns=array();
               
-            $i=1;
+            $i = 1;
             while($data=mysqli_fetch_array($this->result))
                 {
                     $Id_User=$data['Id_User'];
@@ -66,6 +66,10 @@
             $xns=array();
             $xns=$this->listXN();
             for($i=1;$i<=sizeof($xns);$i++)
+            $xn=array();
+            $xns=array();
+            $xns=$this->listXN();
+            for($i = 1;$i <= sizeof($xns);$i ++ )
             {
                 if($xns[$i]->Id_User==$id && $xns[$i]->TinhTrang==0)
                 {

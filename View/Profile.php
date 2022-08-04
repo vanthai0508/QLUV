@@ -5,18 +5,12 @@
 
     <div>
         <h1>Profile</h1>
-        <?php print_r($cv);
-        $homnay=$cv->NgayApply; 
-        echo $homnay;
-        $cenvertedTime = date('Y-m-d H:i:s',strtotime('-6 hour',strtotime($homnay)));
-        echo $cenvertedTime;
-        if (strtotime($homnay) < strtotime($cenvertedTime)) {
-            echo "dung";
-            } else {
-            echo "sai";
-            }
-
-        
+        <?php 
+        if (preg_match("/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/", 'toPdev1**', $matches)==false){
+           // var_dump($matches);
+           echo "dung";
+        }
+        else echo "sai";
         
         ?>
         
