@@ -1,5 +1,5 @@
 <head>
-    <link rel="stylesheet" type="text/css" href="Css/ListCV.css">
+    <link rel="stylesheet" type="text/css" href="Css/Listcv2.css">
 </head>
 <h2>DANH SÁCH CÁC CV</h2>
 <div class="table-wrapper">

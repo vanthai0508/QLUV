@@ -19,7 +19,7 @@
                 <label style="margin-left: 10px;">Vui lòng nhập tên đăng nhập của bạn : </label>
                 <input type="text" name="username">
                 <label style="margin-left: -50px;">Vui lòng nhập email của bạn : </label>
-                <input type="text" name="email">
+                <input type="text" name="email" pattern="[^@\s]+@[^@\s]+\.[^@\s]+" title="Invalid email address" >
                 <input type="submit" name="submitpass">
                 
             </div>  

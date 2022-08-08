@@ -65,7 +65,7 @@
             $xn=array();
             $xns=array();
             $xns=$this->listXN();
-            for($i=1;$i<=sizeof($xns);$i++)
+            for($i = 1;$i <= sizeof($xns);$i++)
             $xn=array();
             $xns=array();
             $xns=$this->listXN();

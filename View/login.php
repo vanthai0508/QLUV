@@ -11,7 +11,7 @@
                 <label>Username</label>
             </div>
             <div class="user-box">
-                <input type="password" name="password" required="">
+                <input type="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$" title="Please include at least 1 uppercase character, 1 lowercase character, and 1 number." required>
                 <label>Password</label>
             </div>
             <button name="login" >DANG NHAP</button>
