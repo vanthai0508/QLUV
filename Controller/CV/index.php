@@ -116,8 +116,8 @@
             // require_once 'View/Apply.php';
             // break;
         case 'list':
-            $cvs=array();
-            $cvs=$dbcv->listCV();
+            $CVS=array();
+            $CVS=$dbcv->listCV();
             require_once('View/ListCV.php');
             break;
         case 'reject':
@@ -135,7 +135,7 @@
                 $USER=array();
                 $USER=$dbuser->userTheoId($CV->Id_User);
                 $dbcv->daDuyet($CV->Id_User);
-                $NoiDung="Rất tiếc , bạn không phù hợp với tiêu chí của công ty chúng tôi , hân hạnh gặp bạn ở lần hợp tác sau , thanks";
+                $NoiDung="Rat tiec , ban khong phu hop voi tieu chi cua cong ty chung toi , han hanh gap ban o lan hop tac sau , thanks";
                 
                $dbuser->goiMail($USER->Email,$NoiDung);
                 
@@ -154,7 +154,7 @@
                 $NgayPV=strtotime ( '+2 day' , strtotime ( $date) ) ;
                 $USER=$dbuser->userTheoId($cv->Id_User);
                 $NgayPV = date ( 'y-m-d h:i:s' , $NgayPV);
-                $NoiDung = "Chúc mừng bạn đã thành công ứng tuyển vào công ty chúng tôi , thời gian phỏng vấn của bạn là ngày ".$NgayPV." . Vui lòng xác đăng nhập vào hệ thống và xác nhận trước 6 giờ so với thời điểm phỏng vấn . Thanks ";
+                $NoiDung = "Chuc mung ban da ung tuyen thanh cong vao cong ty chung toi , thoi gian phong van cua ban la ngay ".$NgayPV." . Vui long dang nhap vao he thong va xac nhan truoc 6 gio so voi thoi diem phong van . Thanks ";
 
                 if($dbxn->addxn($cv->Id_User,$NgayPV,$IdCV,0))
                 {
